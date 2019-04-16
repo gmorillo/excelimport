@@ -20,9 +20,9 @@
 
 	  function drawChart() {
 	    var data = google.visualization.arrayToDataTable([
-			['', 'Encargados/Mes', 'Terminados/Mes', 'Fuera de plazo (Acumulado)'],
+			['', 'Encargados/Mes', 'Terminados/Mes', 'Proyectos Pendientes', 'Fuera de plazo (Acumulado)'],
 			@foreach($getProjectsGraphicData as $data)
-				['@if($data->mes == '2018-12') Diciembre 2018 @elseif($data->mes == '2019-01')Enero 2019 @elseif($data->mes == '2019-02')Febrero 2019 @elseif($data->mes == '2019-03')Marzo 2019 @elseif($data->mes == '2019-04')Abril 2019 @elseif($data->mes == '2019-05')Mayo 2019 @elseif($data->mes == '2019-06')Junio 2019 @elseif($data->mes == '2019-07')Julio 2019 @elseif($data->mes == '2019-08')Agosto 2019 @elseif($data->mes == '2019-09')Septiembre 2019 @elseif($data->mes == '2019-10')Octubre 2019 @elseif($data->mes == '2019-11')Noviembre 2019 @elseif($data->mes == '2019-12')Diciembre 2019 @endif',{{$data->encargados_mes}}, {{$data->terminados_mes}}, {{$data->fuera_plazo}}],
+				['@if($data->mes == '2018-12') Diciembre 2018 @elseif($data->mes == '2019-01')Enero 2019 @elseif($data->mes == '2019-02')Febrero 2019 @elseif($data->mes == '2019-03')Marzo 2019 @elseif($data->mes == '2019-04')Abril 2019 @elseif($data->mes == '2019-05')Mayo 2019 @elseif($data->mes == '2019-06')Junio 2019 @elseif($data->mes == '2019-07')Julio 2019 @elseif($data->mes == '2019-08')Agosto 2019 @elseif($data->mes == '2019-09')Septiembre 2019 @elseif($data->mes == '2019-10')Octubre 2019 @elseif($data->mes == '2019-11')Noviembre 2019 @elseif($data->mes == '2019-12')Diciembre 2019 @endif',{{$data->encargados_mes}}, {{$data->terminados_mes}}, {{$data->proyectos_pendientes}}, {{$data->fuera_plazo}}],
 			@endforeach
 
 		]);
@@ -39,7 +39,7 @@
 	        	duration: 1000,
 	        	easing: 'in'
 	      	},
-	      	colors: ['#3490dc', '#d95f02', '#6c757d']
+	      	colors: ['#3490dc', '#d95f02', '#FFDB58', '#6c757d']
 	    };
 
 	    var chart = new google.charts.Bar(document.getElementById('chart_div'));

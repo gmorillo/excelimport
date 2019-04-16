@@ -13,17 +13,17 @@
 <div class="container-fluid">
   <div class="pt-4 d-flex flex-row-reverse">
       <button class="btn btn-outline-primary hidden-print btn-lg" onclick="myFunction()"><i class="fas fa-print"></i> Imprimir Gráfico</button>
-      <a href="" data-toggle="modal" data-target="#importCSV" class="btn btn-outline-primary btn-lg mr-2 @if(Auth::user()->id == 1) d-block @else d-none @endif"><i class="fas fa-file-csv"></i> Importar nuevos datos al gráfico</a>
+      <a href="" data-toggle="modal" data-target="#ImportGraphicData" class="btn btn-outline-primary btn-lg mr-2 @if(Auth::user()->id == 1) d-block @else d-none @endif"><i class="fas fa-file-csv"></i> Importar nuevos datos al gráfico</a>
   </div>
 </div>
 
 
 <!-- Modal -->
-<div class="modal fade" id="importCSV" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ImportGraphicData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Importar Archivo CSV</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Importar datos al gŕafico</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -34,14 +34,14 @@
 		<div class="input-group mb-3">
 			<div class="custom-file">
 				<input type="file" class="custom-file-input" id="file" name="file">
-				<label class="custom-file-label" for="inputGroupFile02">Agregar archivo CSV</label>
+				<label class="custom-file-label" for="inputGroupFile02">Agregar archivo</label>
 			</div>
 		</div>
 	    <input type="submit" class="btn btn-primary btn-lg" style="margin-top: 3%">
 	</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

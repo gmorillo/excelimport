@@ -55,21 +55,21 @@ class StudentController extends Controller
                 }
 
                 if (!empty($dataTwo)) {
-                    foreach ($dataTwo as $key => $userdata) {
-                        $insertUser[] = [
-                            'email' => $userdata->email,
-                        ];
-                    }
+                        foreach ($dataTwo as $key => $userdata) {
+                            $insertUser[] = [
+                                'email' => $userdata->email,
+                            ];
+                        }
 
-                    if(!empty($insertUser)){
-                        $insertDataRecord = DB::table('users')->insert($insertUser);
-                        if ($insertDataRecord) {
-                            return redirect('/')->with('success', 'Your Data has successfully imported');
-                        }else {                        
-                            return redirect('/')->with('error', 'Error inserting the data..');
+                        if(!empty($insertUser)){
+                            $insertDataRecord = DB::table('users')->insert($insertUser);
+                            if ($insertDataRecord) {
+                                return redirect('/')->with('success', 'Your Data has successfully imported');
+                            }else {                        
+                                return redirect('/')->with('error', 'Error inserting the data..');
+                            }
                         }
                     }
-                }
  
                 return redirect('/administration')->with('success', 'Your Data has successfully imported');
                 

@@ -77,7 +77,7 @@
 	        	duration: 1000,
 	        	easing: 'in'
 	      	},
-	      	colors: ['#3490dc', '#d95f02', '#6c757d', '#FE4545', '#6c757d']
+	      	colors: ['#3490dc', '#d95f02', '#6c757d', '#FE4545']
 	    };
 
 	    var chart = new google.charts.Bar(document.getElementById('chart_div'));

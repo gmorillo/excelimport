@@ -37,11 +37,12 @@ class GraphicProjectController extends Controller
  
                     foreach ($data as $key => $value) {
                         $insert[] = [
-                        'mes'            => $value->mes,
-                        'encargados_mes' => $value->encargados_mes,
-                        'terminados_mes' => $value->terminados_mes,
-                        'fuera_plazo'    => $value->fuera_plazo,
-                    ];
+                            'mes'            => $value->mes,
+                            'encargados_mes' => $value->encargados_mes,
+                            'terminados_mes' => $value->terminados_mes,
+                            'fuera_plazo'    => $value->fuera_plazo,
+                            'proyectos_pendientes'    => $value->proyectos_pendientes,
+                        ];
                     }
  
                     if(!empty($insert)){

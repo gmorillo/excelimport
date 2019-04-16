@@ -16,12 +16,12 @@ class GtcImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Gtc([
-            'mes' => $row['MES'],
-            'encargados_mes' => $row['Encargados/MES'],
-            'terminados_mes' => $row['Terminados/MES'],
-            'pendiente_datos' => $row['Pte. Datos'],
-            'pendiente_entrega' => $row['Pte. Entregar'],
-            'fuera_plazo' => $row['Fuera de Plazo/ACUMULADO'],
+            preg_replace("[\n|\r|\n\r]", "",'mes') => preg_replace("[\n|\r|\n\r]", "",$row['MES']),
+            preg_replace("[\n|\r|\n\r]", "",'encargados_mes') => preg_replace("[\n|\r|\n\r]", "",$row['Encargados/MES']),
+            preg_replace("[\n|\r|\n\r]", "",'terminados_mes') => preg_replace("[\n|\r|\n\r]", "",$row['Terminados/MES']),
+            preg_replace("[\n|\r|\n\r]", "",'pendiente_datos') => preg_replace("[\n|\r|\n\r]", "",$row['Pte. Datos']),
+            preg_replace("[\n|\r|\n\r]", "",'pendiente_entrega') => preg_replace("[\n|\r|\n\r]", "",$row['Pte. Entregar']),
+            preg_replace("[\n|\r|\n\r]", "",'fuera_plazo') => preg_replace("[\n|\r|\n\r]", "",$row['Fuera de Plazo/ACUMULADO']),
         ]);
     }
 }

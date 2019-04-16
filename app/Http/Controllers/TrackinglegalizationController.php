@@ -19,8 +19,8 @@ class TrackinglegalizationController extends Controller
     public function index()
     {   
         $getLegalizations = Trackinglegalization::get();
-        //$getLegalizations = Trackinglegalization::paginate(500);
         //$getLegalizations->setPath('https://nipsat.nipsa.es/seguimiento-de-legalizaciones');
+        //$getLegalizations = Trackinglegalization::get();
         return view('sections.legalizaciones.main', compact('getLegalizations'));
     }
 
@@ -36,29 +36,29 @@ class TrackinglegalizationController extends Controller
             if ($extension == "xlsx" || $extension == "xls" || $extension == "csv") {
 
                 $data = Excel::import(new TrackinglegalizationImport,request()->file('file'));
-                
+ 				
                 if(!empty($data)){
  
                     foreach ($data as $key => $value) {
                         $insert[] = [
-                        'identificador_ede'         => $value->identificador_ede,
-                        'trabajo_gom'         => $value->trabajo_gom,
-                        'identificador_ingenieria'  => $value->identificador_ingenieria,
-                        'organismos_implicados'     => $value->organismos_implicados,
-                        'tarea_tramitacion'         => $value->tarea_tramitacion,
-                        'fecha_generacion_tareas'   => $value->fecha_generacion_tareas,
-                        'tramite_gom'               => $value->tramite_gom,
-                        'expediente_industria'      => $value->expediente_industria,
-                        'pasado_ejecucion'          => $value->pasado_ejecucion,
-                        'estado_tarea'              => $value->estado_tarea,
-                        'cfo'                        => $value->cfo,
-                        'apm_resolucion_transmision' => $value->apm_resolucion_transmision,
-                        'motivo_paralizacion'        => $value->motivo_paralizacion,
-                        'comentarios'                => $value->comentarios,
-                        'desistimiento'              => $value->desistimiento,
-                        'expediente_finalizado'      => $value->expediente_finalizado,
-                        'fecha_favorable_inicio_ejecucion' => $value->fecha_favorable_inicio_ejecucion,
-                        'estado_tramitacion'                => $value->estado_tramitacion,
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ede')         => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ede),
+                        preg_replace("[\n|\r|\n\r]", "",'trabajo_gom')         => preg_replace("[\n|\r|\n\r]", "",$value->trabajo_gom),
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ingenieria')  => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ingenieria),
+                        preg_replace("[\n|\r|\n\r]", "",'organismos_implicados')     => preg_replace("[\n|\r|\n\r]", "",$value->organismos_implicados),
+                        preg_replace("[\n|\r|\n\r]", "",'tarea_tramitacion')         => preg_replace("[\n|\r|\n\r]", "",$value->tarea_tramitacion),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_generacion_tareas')   => preg_replace("[\n|\r|\n\r]", "",$value->fecha_generacion_tareas),
+                        preg_replace("[\n|\r|\n\r]", "",'tramite_gom') 		        => preg_replace("[\n|\r|\n\r]", "",$value->tramite_gom),
+                        preg_replace("[\n|\r|\n\r]", "",'expediente_industria')      => preg_replace("[\n|\r|\n\r]", "",$value->expediente_industria),
+                        preg_replace("[\n|\r|\n\r]", "",'pasado_ejecucion') 			=> preg_replace("[\n|\r|\n\r]", "",$value->pasado_ejecucion),
+                        preg_replace("[\n|\r|\n\r]", "",'estado_tarea') 				=> preg_replace("[\n|\r|\n\r]", "",$value->estado_tarea),
+                        preg_replace("[\n|\r|\n\r]", "",'cfo') 				         => preg_replace("[\n|\r|\n\r]", "",$value->cfo),
+                        preg_replace("[\n|\r|\n\r]", "",'apm_resolucion_transmision') => preg_replace("[\n|\r|\n\r]", "",$value->apm_resolucion_transmision),
+                        preg_replace("[\n|\r|\n\r]", "",'motivo_paralizacion') 	     => preg_replace("[\n|\r|\n\r]", "",$value->motivo_paralizacion),
+                        preg_replace("[\n|\r|\n\r]", "",'comentarios') 			     => preg_replace("[\n|\r|\n\r]", "",$value->comentarios),
+                        preg_replace("[\n|\r|\n\r]", "",'desistimiento')              => preg_replace("[\n|\r|\n\r]", "",$value->desistimiento),
+                        preg_replace("[\n|\r|\n\r]", "",'expediente_finalizado')      => preg_replace("[\n|\r|\n\r]", "",$value->expediente_finalizado),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_favorable_inicio_ejecucion') => preg_replace("[\n|\r|\n\r]", "",$value->fecha_favorable_inicio_ejecucion),
+                        preg_replace("[\n|\r|\n\r]", "",'estado_tramitacion') 			    => preg_replace("[\n|\r|\n\r]", "",$value->estado_tramitacion),
                         ];
                     }
  

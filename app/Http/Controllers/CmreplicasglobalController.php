@@ -15,15 +15,15 @@ use App\Cmreplicaglobaldetallada;
 
 class CmreplicasglobalController extends Controller
 {
-	public function index(){
+	public function index() {
 		$GraficoReplicas = Cmreplicaglobal::orderBy('mes', 'asc')->get();
         return view('sections.replicas.global.cuadro_mando.main', compact('GraficoReplicas'));
 	}
-
     public function graficoDetallado(){
         $GraficoReplicasdetallada = Cmreplicaglobaldetallada::orderBy('mes', 'asc')->get();
         return view('sections.replicas.global.cm_detallado.main', compact('GraficoReplicasdetallada'));
     }
+    
 
     public function importCmreplicasglobal(Request $request){
         //validate the xls file

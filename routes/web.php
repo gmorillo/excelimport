@@ -28,32 +28,32 @@ Route::get('/', 'StudentController@index')->name('index');
 Route::post('import', 'StudentController@import')->name('import');
 
 //SEGUIMIENTO PROYECTO LEGALIZACIONES
-	Route::get('/seguimiento-proyecto-legalizaciones', 'ProjectlegalizationController@index')->name('viewAllData');
-	Route::get('/seguimiento-proyecto-legalizaciones/exportar/', 'ProjectlegalizationController@export')->name('exportAllData');
-	Route::post('/seguimiento-proyecto-legalizaciones/importar/', 'ProjectlegalizationController@import')->name('importAllData');
+Route::get('/seguimiento-proyecto-legalizaciones', 'ProjectlegalizationController@index')->name('viewAllData');
+Route::get('/seguimiento-proyecto-legalizaciones/exportar/', 'ProjectlegalizationController@export')->name('exportAllData');
+Route::post('/seguimiento-proyecto-legalizaciones/importar/', 'ProjectlegalizationController@import')->name('importAllData');
 
 
 
 //PROYECTOS
-	Route::get('/seguimiento-de-proyectos', 'TrackingprojectController@index')->name('viewDataProjects');
-	Route::get('/seguimiento-de-proyectos/exportar/', 'TrackingprojectController@export')->name('exportProjects');
-	Route::post('/seguimiento-de-proyectos/importar/', 'TrackingprojectController@import')->name('importProjects');
+Route::get('/seguimiento-de-proyectos', 'TrackingprojectController@index')->name('viewDataProjects');
+Route::get('/seguimiento-de-proyectos/exportar/', 'TrackingprojectController@export')->name('exportProjects');
+Route::post('/seguimiento-de-proyectos/importar/', 'TrackingprojectController@import')->name('importProjects');
 
 // GRÁFICOS PROYECTOS
-	Route::get('/seguimiento-de-proyectos/graficos/', 'GraphicProjectController@indexProject')->name('viewGraphicProjects');
-	Route::post('/seguimiento-de-proyectos/graficos/importar/', 'GraphicProjectController@importProject')->name('importGraphicProjectData');
+Route::get('/seguimiento-de-proyectos/graficos/', 'GraphicProjectController@indexProject')->name('viewGraphicProjects');
+Route::post('/seguimiento-de-proyectos/graficos/importar/', 'GraphicProjectController@importProject')->name('importGraphicProjectData');
 
 
 
 
 //LEGALIZACIONES
-	Route::get('/seguimiento-de-legalizaciones', 'TrackinglegalizationController@index')->name('viewDataLegalization');
-	Route::post('/seguimiento-de-legalizaciones/importar', 'TrackinglegalizationController@import')->name('importLegalizations');
-	Route::get('/seguimiento-de-legalizaciones/exportar/', 'TrackinglegalizationController@export')->name('exportLegalization');
+Route::get('/seguimiento-de-legalizaciones', 'TrackinglegalizationController@index')->name('viewDataLegalization');
+Route::post('/seguimiento-de-legalizaciones/importar', 'TrackinglegalizationController@import')->name('importLegalizations');
+Route::get('/seguimiento-de-legalizaciones/exportar/', 'TrackinglegalizationController@export')->name('exportLegalization');
 
-	//GRÁFICO LEGALIZACIONES
-		Route::get('/seguimiento-de-legalizaciones/graficos/', 'GraphicController@indexLegalization')->name('viewGraphicLegalizations');
-		Route::post('/seguimiento-de-legalizaciones/graficos/importar/', 'GraphicController@importLegalization')->name('importGraphicLegalizationData');
+//GRÁFICO LEGALIZACIONES
+Route::get('/seguimiento-de-legalizaciones/graficos/', 'GraphicController@indexLegalization')->name('viewGraphicLegalizations');
+Route::post('/seguimiento-de-legalizaciones/graficos/importar/', 'GraphicController@importLegalization')->name('importGraphicLegalizationData');
 
 
 
@@ -82,16 +82,16 @@ Route::post('import', 'StudentController@import')->name('import');
 	//GRÁFICO
 	Route::get('/estudios-tecnicos/gtc/graficos/', 'GtcController@CMGTC')->name('CMGTC');
 
-
 // Replicas ->Global
 	Route::get('/replicas/global/', 'ReplicaController@index')->name('getReplicasGlobal');
 	Route::post('/replicas/global/importar/', 'ReplicaController@importReplicaGlobal')->name('importReplicasGlobal');
 	Route::get('/replicas/global/exportar/', 'ReplicaController@export')->name('exportReplicasGlobal');
-	Route::get('/replicas/global/graficos/', 'CmreplicasglobalController@index')->name('getGlobalReplicas');
+
 	Route::post('/replicas/global/importar/graficos/', 'CmreplicasglobalController@importCmreplicasglobal')->name('CMGlobalReplicas');
+	Route::get('/replicas/global/graficos/', 'CmreplicasglobalController@index')->name('getCMGlobalReplicas');
+
 	Route::get('/replicas/global/grafico-detallado/', 'CmreplicasglobalController@graficoDetallado')->name('CMGlobalReplicasDetallado');
 	Route::post('/replicas/global/importar/graficos-detallado/', 'CmreplicasglobalController@importCmgraficoDetallado')->name('importgraficoDetallado');
-
 
 	
 

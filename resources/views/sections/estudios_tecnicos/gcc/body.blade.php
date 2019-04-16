@@ -56,7 +56,7 @@
 		</div>--}}
 	</div>
 </div>
-<div class="container-fluid mt-2" >
+{{--<div class="container-fluid mt-2" >
 	<div class="row">
 		<div class="col-md-12">
 			<div class="table-responsive ">
@@ -107,21 +107,95 @@
 					</tbody>
 				</table>
 			</div>
-			{{--<nav aria-label="Page navigation example">
-  				<ul class="pagination justify-content-center">
-  					{{ $getAlldata->links() }}
-  				</ul>
-  			</nav>--}}
+
 		</div>
 	</div>
+</div>--}}
+
+
+
+
+
+
+
+{{--TABLA LIKE EXCEL--}}
+
+
+<div class="table-responsive" style="height: auto;">
+	<div class="wrapper1">
+    <div class="div1">
+    </div>
+</div>
+<div class="wrapper2">
+    <div class="div2">
+    	<div id="example"></div>
+    </div>
+</div>
+	
 </div>
 
+<style>
+	.wrapper1, .wrapper2{width: 100%; border: none 0px RED;
+overflow-x: scroll; overflow-y:hidden;}
+.wrapper1{height: 20px; }
+.wrapper2{height: 10800px; }
+.div1 {width:4600px; height: 20px; }
+.div2 {width:4600px; height: 10800px;
+overflow: auto;}
+</style>
 
 
+<script>
 
+		var data = [
+		  
+		  @foreach($getGccdata as $gcc)
+		  ['{{$gcc->ingenieria}}', '{{$gcc->zona}}', '{{$gcc->codigo_expediente}}', '{{$gcc->solicitud_principal}}', '{{$gcc->tipo}}', '{{$gcc->subtipo}}', '{{$gcc->descripcion_expediente}}', '{{$gcc->potencia_solicitada}}', '{{$gcc->tecnico_gestion_comercial}}', '{{$gcc->tecnico_gestion_tecnica}}', '{{$gcc->estado}}', '{{$gcc->estado_solicitud}}', '{{$gcc->fecha_asignacion}}', '{{$gcc->plazo_legal_contestacion}}', '{{$gcc->fecha_hora_apertura}}', '{{$gcc->fecha_contestacion}}', '{{$gcc->fecha_limite}}'],
+		  @endforeach
+		  
+		];
 
+		var container = document.getElementById('example');
 
-
+		var hot = new Handsontable(container, {
+			licenseKey: 'non-commercial-and-evaluation',
+		  	data: data,
+		  	allowHtml: true,
+		  	rowHeaders: true,
+		  	colHeaders: ['INGENIERÍA','ZONA','CÓDIGO EXPEDIENTE','SOLICITUD PRINCIPAL','TIPO','SUBTIPO','DESCRIPCIÓN DEL EXPEDIENTE','POTENCIA SOLICITADA','TÉCNICO GESTION COMERCIAL','TÉCNICO GESTIÓN TÉCNICA','ESTADO','ESTADO SOLICITUD','FECHA DE ASIGNACIÓN A INGENIERÍA','PLAZO LEGAL CONTESTACIÓN','FECHA Y HORA DE APERTURA','FECHA DE CONTESTACIÓN','FECHA LIMITE'],
+		  	
+		  	filters: true,
+		  	dropdownMenu: [
+		  		'filter_by_value',
+		  		'filter_action_bar',
+		  	],
+		   	readOnly: true,
+		   	//wordWrap: false,
+		   	manualColumnResize: true,
+  			manualRowResize: true,
+  			contextMenu: true,
+		   	colWidths: [
+		   		200, 
+		   		200, 
+		   		200, 
+		   		200, 
+		   		200, 
+		   		280, 
+		   		500,
+		   		200, 
+		   		300,
+		   		300, 
+		   		280, 
+		   		280, 
+		   		300, 
+		   		300, 
+		   		280, 
+		   		320,
+		   		200,
+		   		
+		   	],
+		});
+</script>
 
 
 

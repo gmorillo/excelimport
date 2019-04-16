@@ -8,7 +8,7 @@
 @endsection
 
 @section('scripts')
-	
+
 @endsection
 
 @section('stylesheet')
@@ -18,4 +18,3 @@
 		}
 	</style>
 @endsection
-

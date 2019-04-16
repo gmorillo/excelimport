@@ -50,12 +50,12 @@ class GtcController extends Controller
  
                     foreach ($data as $key => $value) {
                         $insert[] = [
-                            'mes'                => $value->mes,
-                            'encargados_mes'     => $value->encargados_mes,
-                            'terminados_mes'     => $value->terminados_mes,
-                            'pendiente_datos'    => $value->pendiente_datos,
-                            'pendiente_entrega'  => $value->pendiente_entrega,
-                            'fuera_plazo'        => $value->fuera_plazo,
+                            preg_replace("[\n|\r|\n\r]", "",'mes')                => preg_replace("[\n|\r|\n\r]", "",$value->mes),
+                            preg_replace("[\n|\r|\n\r]", "",'encargados_mes')     => preg_replace("[\n|\r|\n\r]", "",$value->encargados_mes),
+                            preg_replace("[\n|\r|\n\r]", "",'terminados_mes')     => preg_replace("[\n|\r|\n\r]", "",$value->terminados_mes),
+                            preg_replace("[\n|\r|\n\r]", "",'pendiente_datos')    => preg_replace("[\n|\r|\n\r]", "",$value->pendiente_datos),
+                            preg_replace("[\n|\r|\n\r]", "",'pendiente_entrega')  => preg_replace("[\n|\r|\n\r]", "",$value->pendiente_entrega),
+                            preg_replace("[\n|\r|\n\r]", "",'fuera_plazo')        => preg_replace("[\n|\r|\n\r]", "",$value->fuera_plazo),
                         ];
                     }
  

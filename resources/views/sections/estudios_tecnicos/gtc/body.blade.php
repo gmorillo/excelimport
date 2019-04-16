@@ -48,7 +48,7 @@
 			<a href="{{route('exportAllGlobalData')}}"  class="btn btn-outline-success "><i class="fas fa-file-excel"></i> Exportar</a>
 		</div>
 		<div class="p-2">
-			<nav aria-label="Page navigation example">
+			<nav aria-label="Page navigation tablaGtc">
 				<ul class="pagination">
 					{{ $getAlldata->links() }}
 				</ul>
@@ -56,7 +56,7 @@
 		</div>--}}
 	</div>
 </div>
-<div class="container-fluid mt-2" >
+{{--<div class="container-fluid mt-2" >
 	<div class="row">
 		<div class="col-md-12">
 			<div class="table-responsive ">
@@ -107,14 +107,124 @@
 					</tbody>
 				</table>
 			</div>
-			{{--<nav aria-label="Page navigation example">
-  				<ul class="pagination justify-content-center">
-  					{{ $getAlldata->links() }}
-  				</ul>
-  			</nav>--}}
 		</div>
 	</div>
+</div>--}}
+
+
+{{--TABLA LIKE EXCEL--}}
+
+
+<div class="table-responsive" style="height: auto;">
+	<div class="wrapper1">
+    <div class="div1">
+    </div>
 </div>
+<div class="wrapper2">
+    <div class="div2">
+    	<div id="tablaGtc"></div>
+    </div>
+</div>
+	
+</div>
+
+<style>
+	.wrapper1, .wrapper2{width: 100%; border: none 0px RED;
+overflow-x: scroll; overflow-y:hidden;}
+.wrapper1{height: 20px; }
+.wrapper2{height: 10800px; }
+.div1 {width:4600px; height: 20px; }
+.div2 {width:4600px; height: 10800px;
+overflow: auto;}
+</style>
+
+
+<script>
+
+		var data = [
+		  
+	  	@foreach($getGtcdata as $gtc)
+		  	[
+				'{{$gtc->ingenieria}}',
+				'{{$gtc->zona}}',
+				'{{$gtc->codigo_expediente}}',
+				'{{$gtc->solicitud_principal}}',
+				'{{$gtc->tipo}}',
+				'{{$gtc->subtipo}}',
+				'{{$gtc->descripcion_expediente}}',
+				'{{$gtc->potencia_solicitada}}',
+				'{{$gtc->tecnico_gestion_comercial}}',
+				'{{$gtc->tecnico_gestion_tecnica}}',
+				'{{$gtc->estado}}',
+				'{{$gtc->estado_solicitud}}',
+				'{{$gtc->fecha_asignacion}}',
+				'{{$gtc->plazo_legal_contestacion}}',
+				'{{$gtc->fecha_hora_apertura}}',
+				'{{$gtc->fecha_contestacion}}',
+				'{{$gtc->fecha_limite}}'
+			],
+	  	@endforeach
+		  
+		];
+
+		var container = document.getElementById('tablaGtc');
+
+		var hot = new Handsontable(container, {
+			licenseKey: 'non-commercial-and-evaluation',
+		  	data: data,
+		  	allowHtml: true,
+		  	rowHeaders: true,
+		  	colHeaders: [
+		  		'INGENIERÍA',
+		  		'ZONA',
+		  		'CÓDIGO EXPEDIENTE',
+		  		'SOLICITUD PRINCIPAL',
+		  		'TIPO',
+		  		'SUBTIPO',
+		  		'DESCRIPCIÓN DEL EXPEDIENTE',
+		  		'POTENCIA SOLICITADA',
+		  		'TÉCNICO GESTION COMERCIAL',
+		  		'TÉCNICO GESTIÓN TÉCNICA',
+		  		'ESTADO',
+		  		'ESTADO SOLICITUD',
+		  		'FECHA DE ASIGNACIÓN A INGENIERÍA',
+		  		'PLAZO LEGAL CONTESTACIÓN',
+		  		'FECHA Y HORA DE APERTURA',
+		  		'FECHA DE CONTESTACIÓN',
+		  		'FECHA LIMITE'
+		  	],
+		  	
+		  	filters: true,
+		  	dropdownMenu: [
+		  		'filter_by_value',
+		  		'filter_action_bar',
+		  	],
+		   	readOnly: true,
+		   	//wordWrap: false,
+		   	manualColumnResize: true,
+  			manualRowResize: true,
+  			contextMenu: true,
+		   	colWidths: [
+		   		200, // WIDTH TABLE HEADER --> INGENIERÍA 
+		   		200, // WIDTH TABLE HEADER --> ZONA 
+		   		200, // WIDTH TABLE HEADER --> CÓDIGO EXPEDIENTE 
+		   		200, // WIDTH TABLE HEADER --> SOLICITUD PRINCIPAL 
+		   		200, // WIDTH TABLE HEADER --> TIPO 
+		   		280, // WIDTH TABLE HEADER --> SUBTIPO 
+		   		500, // WIDTH TABLE HEADER --> DESCRIPCIÓN DEL EXPEDIENTE
+		   		200, // WIDTH TABLE HEADER --> POTENCIA SOLICITADA 
+		   		300, // WIDTH TABLE HEADER --> TÉCNICO GESTION COMERCIAL
+		   		300, // WIDTH TABLE HEADER --> TÉCNICO GESTIÓN TÉCNICA 
+		   		280, // WIDTH TABLE HEADER --> ESTADO 
+		   		280, // WIDTH TABLE HEADER --> ESTADO SOLICITUD 
+		   		300, // WIDTH TABLE HEADER --> FECHA DE ASIGNACIÓN A INGENIERÍA 
+		   		300, // WIDTH TABLE HEADER --> PLAZO LEGAL CONTESTACIÓN 
+		   		280, // WIDTH TABLE HEADER --> FECHA Y HORA DE APERTURA 
+		   		320, // WIDTH TABLE HEADER --> FECHA DE CONTESTACIÓN
+		   		200, // WIDTH TABLE HEADER --> FECHA LIMIT
+		   	],
+		});
+</script>
 
 
 

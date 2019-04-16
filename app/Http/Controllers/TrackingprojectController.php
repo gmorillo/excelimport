@@ -19,9 +19,8 @@ class TrackingprojectController extends Controller
     public function index()
     {   
         $getTrackingProjects = Trackingproject::get();
-        //$getTrackingProjects = Trackingproject::paginate(500);
-        //$getTrackingProjects->setPath('https://nipsat.nipsa.es/seguimiento-de-proyectos');
-        
+       // $getTrackingProjects->setPath('https://nipsat.nipsa.es/seguimiento-de-proyectos');
+
         return view('sections.proyectos.main', compact('getTrackingProjects'));
     }
 
@@ -42,17 +41,17 @@ class TrackingprojectController extends Controller
  
                     foreach ($data as $key => $value) {
                         $insert[] = [
-                        'identificador_ede'         => $value->identificador_ede,
-                        'tramite_gom'               => $value->tramite_gom,
-                        'identificador_ingenieria'  => $value->identificador_ingenieria,
-                        'lca'                       => $value->lca,
-                        'descripcion'               => $value->descripción,
-                        'municipio'                 => $value->municipio,
-                        'topologia'                 => $value->topología,
-                        'tipo'                      => $value->tipo,
-                        'fecha_pedido'              => $value->fecha_pedido,
-                        'fecha_entrega'             => $value->fecha_entrega,
-                        'plazo'                     => $value->plazo,
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ede')         => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ede),
+                        preg_replace("[\n|\r|\n\r]", "",'tramite_gom')               => preg_replace("[\n|\r|\n\r]", "",$value->tramite_gom),
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ingenieria')  => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ingenieria),
+                        preg_replace("[\n|\r|\n\r]", "",'lca')                       => preg_replace("[\n|\r|\n\r]", "",$value->lca),
+                        preg_replace("[\n|\r|\n\r]", "",'descripcion')               => preg_replace("[\n|\r|\n\r]", "",$value->descripción),
+                        preg_replace("[\n|\r|\n\r]", "",'municipio')                 => preg_replace("[\n|\r|\n\r]", "",$value->municipio),
+                        preg_replace("[\n|\r|\n\r]", "",'topologia')                 => preg_replace("[\n|\r|\n\r]", "",$value->topología),
+                        preg_replace("[\n|\r|\n\r]", "",'tipo')                      => preg_replace("[\n|\r|\n\r]", "",$value->tipo),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_pedido')              => preg_replace("[\n|\r|\n\r]", "",$value->fecha_pedido),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_entrega')             => preg_replace("[\n|\r|\n\r]", "",$value->fecha_entrega),
+                        preg_replace("[\n|\r|\n\r]", "",'plazo')                     => preg_replace("[\n|\r|\n\r]", "",$value->plazo),
                         ];
                     }
  

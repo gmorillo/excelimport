@@ -36,103 +36,73 @@
 	@endif
 </div>
 
-<div class="container-fluid">
-	<div class="d-flex flex-row-reverse">
-		<div class="p-2">
-			<a href="{{route('viewGraphicProjects')}}" class="btn btn-outline-primary"><i class="fas fa-chart-bar"></i> Ver Ǵráfico</a>
-		</div>
-		{{--<div class="p-2 @if(Auth::user()->id == 1) d-block @else d-none @endif">
-			<a href="#" data-toggle="modal" data-target="#importCSVProjects" class="btn btn-outline-primary"><i class="fas fa-file-csv"></i> Importar CSV</a>
-		</div>--}}
-		<div class="p-2">
-			<a href="{{route('exportProjects')}}"  class="btn btn-outline-success "><i class="fas fa-file-excel"></i> Exportar</a>
-		</div>
-		{{--<div class="p-2">
-			<nav aria-label="Page navigation example">
-				<ul class="pagination">
-					{{ $getTrackingProjects->links() }}
-				</ul>
-			</nav>
-		</div>--}}
+{{--TABLA LIKE EXCEL--}}
+
+
+<div class="table-responsive" style="height: auto;">
+	<div class="wrapper1">
+	    <div class="div1">
+	    </div>
+	</div>
+	<div class="wrapper2">
+	    <div class="div2">
+	    	<div id="Tablaproyectos"></div>
+	    </div>
 	</div>
 </div>
 
-<div class="container-fluid mt-2">
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table table-hover" id="table">
-				<thead>
-					<tr>
-						<th scope="col" class="filter small text-uppercase"><strong>Identificador EDE</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Código NIPSA</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Tarea/LCA</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Descripción</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Topología</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Municipio</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Fecha Encargo</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Fecha Entrega</strong></th>
-						<th scope="col" class="filter small text-uppercase"><strong>Días Plazo</strong></th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach($getTrackingProjects as $project)
-						<tr>
-							<td class="small">
-								@if($project->identificador_ede != null && $project->trabajo_gom != null)
-								{{$project->identificador_ede}}-{{$project->trabajo_gom}}
-								@elseif($project->trabajo_gom == null)
-								{{$project->identificador_ede}}
-								@elseif($project->identificador_ede == null)
-								{{$project->trabajo_gom}}
-								@endif</td>
-							<td class="small">{{$project->identificador_ingenieria}}</td>
-							<td class="small">{{$project->lca}}</td>
-							<td class="small text-truncate" style="max-width: 350px; cursor: context-menu;" title="{{$project->descripcion}}">
-								{{$project->descripcion}}
-							</td>
-							<td class="small">{{$project->topologia}}@if($project->tipo != null)-{{$project->tipo}}@else @endif	</td>
-							<td class="small"> {{$project->municipio}}@if($project->provincia != null)-{{$project->provincia}}@else @endif</td>
-							<td class="small">{{$project->fecha_pedido}}</td>
-							<td class="small">{{$project->fecha_entrega}}</td>
-							<td class="small">{{$project->plazo}}</td>
-						</tr>
-					@endforeach
-				</tbody>
-			</table>
-			{{--<nav aria-label="Page navigation example">
-  				<ul class="pagination justify-content-center">
-  					{{ $getTrackingProjects->links() }}
-  				</ul>
-  			</nav>--}}
-		</div>
-	</div>
-</div>
+<style>
+	.wrapper1, .wrapper2{width: 100%; border: none 0px RED;
+overflow-x: scroll; overflow-y:hidden;}
+.wrapper1{height: 20px; }
+.wrapper2{height: 10800px; }
+.div1 {width:2250px; height: 20px; }
+.div2 {width:2250px; height: 10800px;
+overflow: auto;}
+</style>
 
-{{-- Modal 
-<div class="modal fade" id="importCSVProjects" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Importar Archivo CSV</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="{{ route('importProjects') }}" method="POST" enctype="multipart/form-data">
-	    {{ csrf_field() }}
-		<div class="input-group mb-3">
-			<div class="custom-file">
-				<input type="file" class="custom-file-input" id="file" name="file">
-				<label class="custom-file-label" for="inputGroupFile02">Agregar archivo CSV</label>
-			</div>
-		</div>
-	    <input type="submit" class="btn btn-primary btn-lg" style="margin-top: 3%">
-	</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>--}}
+
+<script>
+
+		var data = [
+		  
+		  @foreach($getTrackingProjects as $project)
+		  ['@if($project->identificador_ede != null && $project->trabajo_gom != null){{$project->identificador_ede}} {{$project->trabajo_gom}}@elseif($project->trabajo_gom == null){{$project->identificador_ede}}@elseif($project->identificador_ede == null){{$project->trabajo_gom}}@endif', '{{$project->identificador_ingenieria}}', '{{$project->lca}}', '{{$project->descripcion}}', '{{$project->topologia}}@if($project->tipo != null)-{{$project->tipo}}@else @endif', '{{$project->municipio}}@if($project->provincia != null)-{{$project->provincia}}@else @endif', '{{$project->fecha_pedido}}', '{{$project->fecha_entrega}}', '{{$project->plazo}}'],
+		  @endforeach
+		  
+		];
+
+		var container = document.getElementById('Tablaproyectos');
+
+		var hot = new Handsontable(container, {
+			licenseKey: 'non-commercial-and-evaluation',
+		  	data: data,
+		  	allowHtml: true,
+		  	rowHeaders: true,
+		  	colHeaders: ['IDENTIFICADOR EDE','CÓDIGO NIPSA','TAREA/LCA','DESCRIPCIÓN','TOPOLOGÍA','MUNICIPIO','FECHA ENCARGO','FECHA ENTREGA','DÍAS PLAZO'],
+		  	
+		  	filters: true,
+		  	dropdownMenu: [
+		  		'filter_by_value',
+		  		'filter_action_bar',
+		  	],
+		   	readOnly: true,
+		   	//wordWrap: false,
+		   	manualColumnResize: true,
+  			manualRowResize: true,
+  			contextMenu: true,
+		   	colWidths: [
+		   		200, 
+		   		200, 
+		   		200, 
+		   		500, 
+		   		200, 
+		   		280, 
+		   		200,
+		   		200, 
+		   		200,
+		   	],
+		});
+</script>
+
+

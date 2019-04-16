@@ -84,8 +84,8 @@
                   <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Global</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{route('getReplicasGlobal')}}"><i class="fas fa-table"></i> Datos Réplicas Global</a></li>
-                      <li><a class="dropdown-item" href="{{route('getGlobalReplicas')}}"><i class="far fa-chart-bar"></i> CM Réplicas Global</a></li>
-                      <li><a class="dropdown-item" href="{{route('CMGlobalReplicasDetallado')}}"><i class="far fa-chart-bar"></i> CM Detallado Réplicas Global</a></li>
+                      <li><a class="dropdown-item" href="{{route('getCMGlobalReplicas')}}"><i class="far fa-chart-bar"></i> CM Réplicas Global</a></li>
+                     <li><a class="dropdown-item" href="{{route('CMGlobalReplicasDetallado')}}"><i class="far fa-chart-bar"></i> CM Detallado Réplicas Global</a></li>
                     </ul>
                   </li>
                   {{--<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">EETT</a>
@@ -112,7 +112,6 @@
                     </li>
                   @endauth
                 </ul>
-
               </li>
             </ul>
             @endauth

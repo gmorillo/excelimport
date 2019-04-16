@@ -39,106 +39,26 @@
  <div class="container-fluid">
 	<div class="d-flex flex-row-reverse">
 		<div class="p-2">
-			<a href="{{route('viewGraphicLegalizations')}}" class="btn btn-outline-primary"><i class="fas fa-chart-bar"></i> Ver Gráfico</a>
+			<a href="{{route('getCMGlobalReplicas')}}" class="btn btn-outline-primary"><i class="fas fa-chart-bar"></i> Ver Gráfico</a>
 		</div>
 		<div class="p-2">
 			<a href="{{route('exportReplicasGlobal')}}"  class="btn btn-outline-success "><i class="fas fa-file-excel"></i> Exportar</a>
 		</div>
 	</div>
 </div>
-{{--
-<div class="container-fluid mt-2">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="table-responsive">
-				<table class="table table-hover" id="table">
-					<thead>
-						<tr>
-							<th scope="col" class=" filter text-uppercase small"><strong>Tecnico EDE</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>PROVINCIA</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>DEPARTAMENTO</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>TIPO</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>GOM</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>SOLICITUD</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>DESCRIPCION</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>FECHA ENCARGO</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>AdS/odm</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Protocolo ATLANTE</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Fecha diseñado ATLANTE</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Estado ATLANTE</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Fin Atlante</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Proyecto AGP</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Estado AGP</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Fin AGP</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>Finca</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>TIEMPO DE REPLICA</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>LCA</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>FECHA CONCLUSO</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>ING ESTUDIO</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>OBSERVACIONES</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>PLAZOS ATLANTE</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>PLAZOS REPLICA</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>TECNICO NIPSA</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>PROYECTO NIPSA</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>PENDIENTE ENDESA</strong></th>
-							<th scope="col" class=" filter text-uppercase small"><strong>PLAZO</strong></th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach($getReplicas as $replica)
-							<tr>
-								<td class="small" style="padding-right: 50px;">{{$replica->tecnico_ede}}</td>
-								<td class="small" style="padding-right: 50px">{{$replica->provincia}}</td>
-								<td class="small" style="padding-right: 70px">{{$replica->departamento}}</td>
-								<td class="small" style="padding-right: 50px">{{$replica->tipo}}</td>
-								<td class="small" style="padding-right: 50px">{{$replica->gom}}</td>
-								<td class=" small" style="padding-right: 50px">{{$replica->solicitud}}</td>
-								<td class="small text-truncate" style="max-width: 350px;cursor: context-menu;" title="{{$replica->descripcion}}">
-									{{$replica->descripcion}}
-								</td>
-								<td class="small " style="padding-right: 130px">{{$replica->fecha_encargo}}</td>
-								<td class="small" style="padding-right: 30px">{{$replica->ads_odm}}</td>
-								<td class="small" style="padding-right: 20px">{{$replica->protocolo_atlante}}</td>
-								<td class="small " style="padding-right: 150px">{{$replica->fecha_diseno_atlante}}</td>
-								<td class="small  " style="padding-right: 80px" > {{$replica->estado_atlante}}</td>
-								<td class="small " style="padding-right: 80px;"> {{$replica->fin_atlante}}</td>
-								<td class="small text-truncate" style="max-width: 150px;" title="{{$replica->proyecto_agp}}">{{$replica->proyecto_agp}}</td>
-								<td class=" small" style="padding-right: 30px">{{$replica->estado_agp}}</td>
-								<td class="small" style="padding-right: 50px">{{$replica->fin_agp}}</td>
-								<td class=" small" style="padding-right: 60px">{{$replica->finca}}</td>
-								<td class="small" style="padding-right: 90px;">{{$replica->tiempo_replica}}</td>
-								<td class="small" style="padding-right: 50px">{{$replica->lca}}</td>
-								<td class="small" style="padding-right: 80px">{{$replica->fecha_concluso}}</td>
-								<td class="small" style="padding-right: 50px">{{$replica->ing_estudio}}</td>
-								<td class="small text-truncate" style="max-width: 350px; cursor: context-menu;" title="{{$replica->observaciones}}">
-									{{$replica->observaciones}}
-								</td>
-								<td class=" small text-center" style="padding-right: 80px">{{$replica->plazos_atlante}}</td>
-								<td class="small text-truncate" style="padding-right: 50px;">{{$replica->plazos_replica}}</td>
-								<td class="small " style="padding-right: 80px">{{$replica->tecnico_nipsa}}</td>
-								<td class="small  text-truncate" style="padding-right: 100px">{{$replica->proyecto_nipsa}}</td>
-								<td class="small  text-center" style="padding-right: 100px">{{$replica->pendiente_endesa}}</td>
-								<td class="small " style="padding-right: 50px">{{$replica->plazo}}</td>
-							</tr>
-						@endforeach
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
---}}
+{{--TABLA LIKE EXCEL--}}
+
+
 <div class="table-responsive" style="height: auto;">
 	<div class="wrapper1">
-    <div class="div1">
-    </div>
-</div>
-<div class="wrapper2">
-    <div class="div2">
-    	<div id="example"></div>
-    </div>
-</div>
-	
+	    <div class="div1">
+	    </div>
+	</div>
+	<div class="wrapper2">
+	    <div class="div2">
+	    	<div id="tablaReplicasGlobal"></div>
+	    </div>
+	</div>
 </div>
 
 <style>
@@ -146,31 +66,88 @@
 overflow-x: scroll; overflow-y:hidden;}
 .wrapper1{height: 20px; }
 .wrapper2{height: 10800px; }
-.div1 {width:7850px; height: 20px; }
-.div2 {width:7850px; height: 10800px;
+.div1 {width:6750px; height: 20px; }
+.div2 {width:6750px; height: 10800px;
 overflow: auto;}
 </style>
-
 
 
 <script>
 
 		var data = [
 		  
-		  @foreach($getReplicas as $legalization)
-		  ['{{$legalization->tecnico_ede}}', 	'{{$legalization->provincia}}','{{$legalization->departamento}}','{{$legalization->tipo}}','{{$legalization->gom}}','{{$legalization->solicitud}}','{{$legalization->descripcion}}','{{$legalization->fecha_encargo}}','{{$legalization->ads_odm}}','{{$legalization->protocolo_atlante}}','{{$legalization->fecha_diseno_atlante}}','{{$legalization->estado_atlante}}','{{$legalization->fin_atlante}}','{{$legalization->proyecto_agp}}','{{$legalization->estado_agp}}','{{$legalization->fin_agp}}','{{$legalization->finca}}','{{$legalization->tiempo_replica}}','{{$legalization->lca}}','{{$legalization->fecha_concluso}}','{{$legalization->ing_estudio}}','{{$legalization->observaciones}}','{{$legalization->plazos_atlante}}','{{$legalization->plazos_replica}}','{{$legalization->tecnico_nipsa}}','{{$legalization->proyecto_nipsa}}','{{$legalization->pendiente_endesa}}','{{$legalization->plazo}}'],
+		  @foreach($getReplicas as $replica)
+		  [
+			   '{{$replica->tecnico_ede}}', //TÉCNICO EDE
+			   '{{$replica->provincia}}', //PROVINCIA
+			   '{{$replica->departamento}}', //DEPARTAMENTO
+			   '{{$replica->tipo}}', //TIPO
+			   '{{$replica->gom}}', //GOM
+			   '{{$replica->solicitud}}', //SOLICITUD
+			   '{{$replica->descripcion}}', //DESCRIPCION
+			   '{{$replica->fecha_encargo}}', //FECHA ENCARGO
+			   '{{$replica->ads_odm}}', //ADS/ODM
+			   '{{$replica->protocolo_atlante}}', //PROTOCOLO ATLANTE
+			   '{{$replica->fecha_diseno_atlante}}', //FECHA DISEÑADO ATLANTE
+			   '{{$replica->estado_atlante}}', //ESTADO ATLANTE
+			   '{{$replica->fin_atlante}}', //FIN ATLANTE
+			   '{{$replica->proyecto_agp}}', //PROYECTO AGP
+			   '{{$replica->estado_agp}}', //ESTADO AGP
+			   '{{$replica->fin_agp}}', //FIN AGP
+			   '{{$replica->finca}}', //FINCA
+			   '{{$replica->tiempo_replica}}', //TIEMPO DE REPLICA
+			   '{{$replica->lca}}', //LCA
+			   '{{$replica->fecha_concluso}}', //FECHA CONCLUSO
+			   '{{$replica->ing_estudio}}', //ING ESTUDIO
+			   '{{$replica->observaciones}}', //OBSERVACIONES
+			   '{{$replica->plazos_atlante}}', //PLAZOS ATLANTE
+			   '{{$replica->plazos_replica}}', //PLAZOS REPLICA
+			   '{{$replica->tecnico_nipsa}}', //TECNICO NIPSA
+			   '{{$replica->proyecto_nipsa}}', //PROYECTO NIPSA
+			   '{{$replica->pendiente_endesa}}', //PENDIENTE ENDESA
+			   '{{$replica->plazo}}'   //PLAZO
+		   ],
 		  @endforeach
 		  
 		];
 
-		var container = document.getElementById('example');
+		var container = document.getElementById('tablaReplicasGlobal');
 
 		var hot = new Handsontable(container, {
 			licenseKey: 'non-commercial-and-evaluation',
 		  	data: data,
 		  	allowHtml: true,
 		  	rowHeaders: true,
-		  	colHeaders: ['PROVINCIA','CODIGO NIPSA','TAREA PROYECTO','FECHA ENCARGO','FECHA ENTREGA','TITULO ENCARGO','TECNICO ENDESA','TIPO TRABAJO','POBLACION','CODIGO CENTRO','PROPIEDAD','TIPO','LEGAL','DEPARTAMENTO','SOLICITUD NNSS','TRABAJO GOM','ORGANISMOS IMPLICADOS','TAREA LCA','FECHA GENERACION', 'TAREAS','TRAMITE GOM','EXPTE INDUSTRIA','PASADO EJECUCION','ESTADO TAREA','CFO','APM','MOTIVO PARALIZACION','OBSERVACIONES'],
+		  	colHeaders: [
+			  	'TÉCNICO EDE',
+			  	'PROVINCIA',
+			  	'DEPARTAMENTO',
+			  	'TIPO',
+			  	'GOM',
+			  	'SOLICITUD',
+			  	'DESCRIPCION',
+			  	'FECHA ENCARGO',
+			  	'ADS/ODM',
+			  	'PROTOCOLO ATLANTE',
+			  	'FECHA DISEÑADO ATLANTE',
+			  	'ESTADO ATLANTE',
+			  	'FIN ATLANTE',
+			  	'PROYECTO AGP',
+			  	'ESTADO AGP',
+			  	'FIN AGP',
+			  	'FINCA',
+			  	'TIEMPO DE REPLICA',
+			  	'LCA',
+			  	'FECHA CONCLUSO',
+			  	'ING ESTUDIO',
+			  	'OBSERVACIONES',
+			  	'PLAZOS ATLANTE',
+			  	'PLAZOS REPLICA',
+			  	'TECNICO NIPSA',
+			  	'PROYECTO NIPSA',
+			  	'PENDIENTE ENDESA',
+			  	'PLAZO'
+		  	],
 		  	
 		  	filters: true,
 		  	dropdownMenu: [
@@ -183,51 +160,64 @@ overflow: auto;}
   			manualRowResize: true,
   			contextMenu: true,
 		   	colWidths: [
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200, 
-		   		280, 
-		   		200,
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200,
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200,
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200, 
-		   		200,
-		   		200, 
-		   		200, 
-		   		200, 
-		   		600, 
-		   		200,
-		   		900, 
-		   		200, 
-		   		300, 
-		   		300, 
-		   		200, 
+		   		200, //WIDTH TABLE HEADER --> TÉCNICO EDE 
+		   		200, //WIDTH TABLE HEADER --> PROVINCIA 
+		   		200, //WIDTH TABLE HEADER --> DEPARTAMENTO 
+		   		200, //WIDTH TABLE HEADER --> TIPO 
+		   		200, //WIDTH TABLE HEADER --> GOM 
+		   		280, //WIDTH TABLE HEADER --> SOLICITUD 
+		   		400, //WIDTH TABLE HEADER --> DESCRIPCION
+		   		200, //WIDTH TABLE HEADER --> FECHA ENCARGO 
+		   		200, //WIDTH TABLE HEADER --> ADS/ODM
+		   		200, //WIDTH TABLE HEADER --> PROTOCOLO ATLANTE 
+		   		200, //WIDTH TABLE HEADER --> FECHA DISEÑADO ATLANTE 
+		   		200, //WIDTH TABLE HEADER --> ESTADO ATLANTE 
+		   		200, //WIDTH TABLE HEADER --> FIN ATLANTE 
+		   		200, //WIDTH TABLE HEADER --> PROYECTO AGP 
+		   		280, //WIDTH TABLE HEADER --> ESTADO AGP 
+		   		320, //WIDTH TABLE HEADER --> FIN AGP
+		   		200, //WIDTH TABLE HEADER --> FINCA
+		   		200, //WIDTH TABLE HEADER --> TIEMPO DE REPLICA
+		   		200, //WIDTH TABLE HEADER --> LCA
+		   		200, //WIDTH TABLE HEADER --> FECHA CONCLUSO 
+		   		200, //WIDTH TABLE HEADER --> ING ESTUDIO 
+		   		600, //WIDTH TABLE HEADER --> OBSERVACIONES 
+		   		200, //WIDTH TABLE HEADER --> PLAZOS ATLANTE 
+		   		200, //WIDTH TABLE HEADER --> PLAZOS REPLICA 
+		   		280, //WIDTH TABLE HEADER --> TECNICO NIPSA 
+		   		320, //WIDTH TABLE HEADER --> PROYECTO NIPSA
+		   		200, //WIDTH TABLE HEADER --> PENDIENTE ENDESA
+		   		200, //WIDTH TABLE HEADER --> PLAZO
 		   	],
 		});
-
-
-
-		$(function(){
-    $(".wrapper1").scroll(function(){
-        $(".wrapper2")
-            .scrollLeft($(".wrapper1").scrollLeft());
-    });
-    $(".wrapper2").scroll(function(){
-        $(".wrapper1")
-            .scrollLeft($(".wrapper2").scrollLeft());
-    });
-});
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

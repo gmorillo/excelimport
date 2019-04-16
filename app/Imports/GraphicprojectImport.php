@@ -20,6 +20,7 @@ class GraphicprojectImport implements ToModel, WithHeadingRow
             'encargados_mes' =>  $row['Encargados por mes proyectos'], 
             'terminados_mes' =>  $row['Terminados por mes proyectos'], 
             'fuera_plazo' =>  $row['Fuera de plazo/ACUMULADO proyectos'], 
+            'proyectos_pendientes' => $row['Proyectos pendientes']
         ]);
     }
 }
