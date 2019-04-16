@@ -12,6 +12,7 @@ use Excel;
 use File;
 use Redirect;
 use App\Gtc;
+use App\Globalet;
 
 class GtcController extends Controller
 {
@@ -22,7 +23,13 @@ class GtcController extends Controller
      */
     public function index()
     {
-        //
+        $getGtcdata = Globalet::where('departamento', 'GTC')->get();
+        return view('sections.estudios_tecnicos.gtc.main', compact('getGtcdata'));
+    }
+
+    public function CMGTC(){
+        $CMGTC = Gtc::orderBy('mes', 'asc')->get();
+        return view('sections.estudios_tecnicos.gtc.cuadro_mando.main', compact('CMGTC'));
     }
 
     public function importCmetGtc(Request $request){
@@ -54,9 +61,9 @@ class GtcController extends Controller
  
                     if(!empty($insert)){$insertData = DB::table('gtcs')->insert($insert);}
                 }
-                return redirect('/')->with('success', 'Archivo importado correctamente');
+                return redirect('/estudios-tecnicos/gtc/graficos')->with('success', 'Archivo importado correctamente');
             }else{
-                return redirect('/')->with('error', 'No se ha podido importar el documento con extensión '.$extension.' !! Porfavor importe un documento con extensión xls o csv!!');;
+                return redirect('/estudios-tecnicos/gtc/graficos')->with('error', 'No se ha podido importar el documento con extensión '.$extension.' !! Porfavor importe un documento con extensión xls o csv!!');;
             }
         }
     }

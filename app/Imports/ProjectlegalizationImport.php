@@ -22,7 +22,7 @@ class ProjectlegalizationImport implements ToModel, WithHeadingRow
             'tarea_proyecto' =>  $row['TAREA PROYECTO'],
             'fecha_encargo' =>  $row['FECHA ENCARGO'],
             'fecha_entrega' =>  $row['FECHA ENTREGA'],
-            'titulo_encargo' =>  $row['TITULO ENCARGO O PROYECTO'],
+            'titulo_encargo' =>  preg_replace("[\n|\r|\n\r]", " ", $row['TITULO ENCARGO O PROYECTO']),
             'tecnico_endesa' =>  $row['TECNICO ENDESA'],
             'tipo_trabajo' =>  $row['TIPO TRABAJO'],
             'poblacion' =>  $row['POBLACIÓN'],

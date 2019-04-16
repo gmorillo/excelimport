@@ -55,7 +55,7 @@ class ProjectlegalizationExport implements FromQuery, WithMapping, WithHeadings,
             $projectlegalization->expediente_finalizado,
             $projectlegalization->fecha_favorable,
             $projectlegalization->estado_tramitacion,
-            $projectlegalization->dias_plazo,
+            //$projectlegalization->dias_plazo,
 
             //Date::dateTimeToExcel($projectlegalization->created_at),
             //Date::dateTimeToExcel($projectlegalization->updated_at),
@@ -76,7 +76,9 @@ class ProjectlegalizationExport implements FromQuery, WithMapping, WithHeadings,
             'TECNICO ENDESA',
             'TIPO TRABAJO',
             'POBLACIÓN',
-            'CÓDIGO DE CENTRO Y/O TRAZA NOMBRE DE LÍNEA',
+            'CÓDIGO DE CENTRO
+ Y/O TRAZA
+NOMBRE DE LÍNEA',
             'PROPIEDAD',
             'TIPO',
             'LEGAL',
@@ -85,20 +87,23 @@ class ProjectlegalizationExport implements FromQuery, WithMapping, WithHeadings,
             'TRABAJO GOM',
             'ORGANISMOS IMPLICADOS',
             'TAREA/LCA',
-            'FECHA GENERACIÓN TAREAS', //R
+            'FECHA GENERACIÓN 
+TAREAS', //R
             'TRAMITE GOM',
             'EXPTE INDUSTRIA',
             'PASADO A EJECUCIÓN',
             'ESTADO TAREA',
             'CFO',
-            'APM RESOLUCION TRANSMISION',
-            'MOTIVO PARALIZACION TRAMITACIÓN Y/O NO FINALIZACION EXPTE',
+            'APM
+RESOLUCION TRANSMISION',
+            'MOTIVO PARALIZACION TRAMITACIÓN
+Y/O NO FINALIZACION EXPTE',
             'OBSERVACIONES',
             'DESISTIMIENTO',
             'EXPTE FINALIZADO',
             'FECHA FAVORABLE INICIO EJECUCION',//AA
             'ESTADO TRAMITACION',
-            'Días Plazo',
+            //'Días Plazo',
         ];
     }
 

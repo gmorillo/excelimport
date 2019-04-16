@@ -53,9 +53,9 @@ class CmetglobalController extends Controller
  
                     if(!empty($insert)){$insertData = DB::table('cmetglobals')->insert($insert);}
                 }
-                return redirect('/')->with('success', 'Archivo importado correctamente');
+                return redirect('/estudios-tecnicos/datos-et-global/graficos/')->with('success', 'Archivo importado correctamente');
             }else{
-                return redirect('/')->with('error', 'No se ha podido importar el documento con extensión '.$extension.' !! Porfavor importe un documento con extensión xls o csv!!');;
+                return redirect('/estudios-tecnicos/datos-et-global/graficos/')->with('error', 'No se ha podido importar el documento con extensión '.$extension.' !! Porfavor importe un documento con extensión xls o csv!!');;
             }
         }
     }

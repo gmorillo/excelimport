@@ -77,7 +77,23 @@ Route::post('import', 'StudentController@import')->name('import');
 
 
 //ESTUDIOS TÉCNICOS -> GTC
+	Route::get('/estudios-tecnicos/gtc/', 'GtcController@index')->name('getDataGTC');
 	Route::post('/estudios-tecnicos/importar-cm-et-gtc/', 'GtcController@importCmetGtc')->name('importCmetGtcData');
+	//GRÁFICO
+	Route::get('/estudios-tecnicos/gtc/graficos/', 'GtcController@CMGTC')->name('CMGTC');
+
+
+// Replicas ->Global
+	Route::get('/replicas/global/', 'ReplicaController@index')->name('getReplicasGlobal');
+	Route::post('/replicas/global/importar/', 'ReplicaController@importReplicaGlobal')->name('importReplicasGlobal');
+	Route::get('/replicas/global/exportar/', 'ReplicaController@export')->name('exportReplicasGlobal');
+	Route::get('/replicas/global/graficos/', 'CmreplicasglobalController@index')->name('getGlobalReplicas');
+	Route::post('/replicas/global/importar/graficos/', 'CmreplicasglobalController@importCmreplicasglobal')->name('CMGlobalReplicas');
+	Route::get('/replicas/global/grafico-detallado/', 'CmreplicasglobalController@graficoDetallado')->name('CMGlobalReplicasDetallado');
+	Route::post('/replicas/global/importar/graficos-detallado/', 'CmreplicasglobalController@importCmgraficoDetallado')->name('importgraficoDetallado');
+
+
+	
 
 
 

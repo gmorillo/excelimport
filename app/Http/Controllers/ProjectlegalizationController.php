@@ -22,10 +22,11 @@ class ProjectlegalizationController extends Controller
 {
     public function index()
     {   
-        $getAlldata = Projectlegalization::get();
+        //$getAlldata = Projectlegalization::get();
         //$titulo_encargo = preg_replace("/[\r\n|\n|\r]+/", PHP_EOL, Projectlegalization::get('titulo_encargo'));
         //return $string;
-        //$getAlldata = Projectlegalization::paginate(500);
+        $getAlldata = Projectlegalization::get();
+        //$getAlldata = preg_replace("[\n|\r|\n\r]", "", $datosTabla);
         //$getAlldata->setPath('https://nipsat.nipsa.es/seguimiento-proyecto-legalizaciones');
         return view('sections.seguimiento_proyectos_legalizaciones.main', compact('getAlldata'));
     }

@@ -6,11 +6,51 @@
         CM ET GCC
     </h2>
 </div>
+<div class="container-fluid mb-5">
+	<div class="float-right ">
+		<a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importCMetGCC"><i class="fas fa-file-upload"></i> Importar CM ET GCC</a>
+	</div>
+</div><br>
 <div class="container-fluid my-5" id="container-seg-et">
-
 	<div id="chart_div"></div>
 </div>
 
+
+
+
+
+
+<!-- Modal CM ET GCC-->
+<div class="modal fade" id="importCMetGCC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Importar Datos Gráfico ET GCC</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('importCmetGccData') }}" method="POST" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file" name="file">
+                <label class="custom-file-label" for="inputGroupFile02" required>Agregar archivo Excel/CSV</label>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary btn-lg loaddataspin" style="margin-top: 3%">
+    </form>
+    <div class="text-center">
+        <i class="fa fa-spinner d-none text-primary loadingspin"></i>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('scripts')

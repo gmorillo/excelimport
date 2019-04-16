@@ -53,6 +53,7 @@
 		</div>--}}
 	</div>
 </div>
+{{--
 <div class="container-fluid mt-2" >
 	<div class="row">
 		<div class="col-md-12">
@@ -94,7 +95,6 @@
 							<th scope="col" class=" filter">Fecha Favorable</th>
 							<th scope="col" class=" filter">Inicio Ejecucion</th>
 							<th scope="col" class=" filter">Estado Tramitacion</th>
-							{{--<th scope="col" class=" filter">Días Plazo</th>--}}
 						</tr>
 					</thead>
 					<tbody>
@@ -134,21 +134,20 @@
 								<td class="small " style="padding-right: 150px" > {{$legalization->fecha_favorable}}</td>
 								<td class="small  " style="padding-right: 150px">{{$legalization->inicio_ejecucion}}</td>
 								<td class="small  " style="padding-right: 100px">{{$legalization->estado_tramitacion}}</td>
-								{{--<td class="small " style="padding-right: 100px">{{$legalization->dias_plazo}}</td>--}}
 								
 							</tr>
 						@endforeach
 					</tbody>
 				</table>
 			</div>
-			{{--<nav aria-label="Page navigation example">
+			<nav aria-label="Page navigation example">
   				<ul class="pagination justify-content-center">
   					{{ $getAlldata->links() }}
   				</ul>
-  			</nav>--}}
+  			</nav>
 		</div>
 	</div>
-</div>
+</div>--}}
 
 {{-- Modal 
 <div class="modal fade" id="importCSV" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -182,7 +181,7 @@
 
 
 {{--TABLA LIKE EXCEL--}}
-{{--
+
 
 <div class="table-responsive" style="height: auto;">
 	<div class="wrapper1">
@@ -285,4 +284,4 @@ overflow: auto;}
             .scrollLeft($(".wrapper2").scrollLeft());
     });
 });
-</script>--}}
+</script>

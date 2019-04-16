@@ -8,9 +8,6 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
           @auth
             <ul class="navbar-nav">
-              {{--<li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>--}}
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Proyectos-Legalizaciones
@@ -21,8 +18,6 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{route('viewDataProjects')}}"><i class="fas fa-table"></i> Datos Proyectos</a></li>
                       <li><a class="dropdown-item" href="{{route('viewGraphicProjects')}}"><i class="far fa-chart-bar"></i> CM Proyectos</a></li>
-        
-        
                       {{--<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu</a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
@@ -35,43 +30,22 @@
                           <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
                         </ul>
                       </li>--}}
-        
-        
-        
                     </ul>
                   </li>
                   <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Seguimiento Tramitación Legalizaciones</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{route('viewDataLegalization')}}"><i class="fas fa-table"></i> Datos Expedientes Legalización Proyectos</a></li>
                       <li><a class="dropdown-item" href="{{route('viewGraphicLegalizations')}}"><i class="far fa-chart-bar"></i> CM Estado Legalización Proyectos</a></li>
-        
-        
-                      {{--<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
-                          <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Second subsubmenu</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
-                          <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
-                        </ul>
-                      </li>--}}
-        
-        
-        
                     </ul>
                   </li>
                   @auth
-               <li class="nav-item">
-                <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importCSV"><i class="fas fa-file-upload"></i> Importar Datos</a>
-              </li>
-              
-              @endauth
+                    <li class="nav-item px-1 @if(Auth::id() == 1) d-block @else d-none @endif">
+                      <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importCSV"><i class="fas fa-file-upload"></i> Importar Datos</a>
+                    </li>
+                  @endauth
                 </ul>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown @if(Auth::id() == 1) d-block @else d-none @endif">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Estudios Técnicos
                 </a>
@@ -91,41 +65,30 @@
                   </li>
                   <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">GTC</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{route('viewDataLegalization')}}"><i class="fas fa-table"></i> Datos E.T. GTC</a></li>
-                      <li><a class="dropdown-item" href="{{route('viewDataLegalization')}}"><i class="far fa-chart-bar"></i> CM E.T. GTC</a></li>
+                      <li><a class="dropdown-item" href="{{route('getDataGTC')}}"><i class="fas fa-table"></i> Datos E.T. GTC</a></li>
+                      <li><a class="dropdown-item" href="{{route('CMGTC')}}"><i class="far fa-chart-bar"></i> CM E.T. GTC</a></li>
                     </ul>
                   </li>
-                  <li>
+                  <li class="px-1">
                     <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importETGLOBAL" >
-                      <i class="fas fa-file-upload"></i> Importar datos GLOBAL
+                      <i class="fas fa-file-upload"></i> Importar E.T.
                     </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importGraphicCalidadET"><i class="fas fa-file-upload"></i> Importar Datos Grafico Calidad ET</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importCMetGlobal"><i class="fas fa-file-upload"></i> Importar CM ET Global</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importCMetGCC"><i class="fas fa-file-upload"></i> Importar CM ET GCC</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importCMetGTC"><i class="fas fa-file-upload"></i> Importar CM ET GTC</a>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown @if(Auth::id() == 1) d-block @else d-none @endif">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Réplicas
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Global</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{route('viewDataProjects')}}"><i class="fas fa-table"></i> Datos Réplicas Global</a></li>
-                      <li><a class="dropdown-item" href="{{route('viewGraphicProjects')}}"><i class="far fa-chart-bar"></i> CM Réplicas Global</a></li>
+                      <li><a class="dropdown-item" href="{{route('getReplicasGlobal')}}"><i class="fas fa-table"></i> Datos Réplicas Global</a></li>
+                      <li><a class="dropdown-item" href="{{route('getGlobalReplicas')}}"><i class="far fa-chart-bar"></i> CM Réplicas Global</a></li>
+                      <li><a class="dropdown-item" href="{{route('CMGlobalReplicasDetallado')}}"><i class="far fa-chart-bar"></i> CM Detallado Réplicas Global</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">EETT</a>
+                  {{--<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">EETT</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{route('viewDataLegalization')}}"><i class="fas fa-table"></i> Datos Réplicas EETT</a></li>
                       <li><a class="dropdown-item" href="{{route('viewDataLegalization')}}"><i class="far fa-chart-bar"></i> CM Réplicas EETT</a></li>
@@ -142,8 +105,14 @@
                       <li><a class="dropdown-item" href="{{route('viewDataLegalization')}}"><i class="fas fa-table"></i> Datos Réplicas Otros</a></li>
                       <li><a class="dropdown-item" href="{{route('viewDataLegalization')}}"><i class="far fa-chart-bar"></i> CM Réplicas Otros</a></li>
                     </ul>
-                  </li>
+                  </li>--}}
+                  @auth
+                    <li class="nav-item px-1 @if(Auth::id() == 1) d-block @else d-none @endif">
+                      <a class="btn btn-outline-primary w-100 my-2" href="#" data-toggle="modal" data-target="#importReplicasGlobalesModal"><i class="fas fa-file-upload"></i> Importar Replicas Globales</a>
+                    </li>
+                  @endauth
                 </ul>
+
               </li>
             </ul>
             @endauth
@@ -165,18 +134,16 @@
                       </a>
 
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{ route('logout') }}"
-                             onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
+                          <a  class="dropdown-item" 
+                            href="{{ route('logout') }}" 
+                            onclick="event.preventDefault(); 
+                            document.getElementById('logout-form').submit();
+                          ">
                               {{ __('Logout') }}
                           </a>
-
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               @csrf
                           </form>
-                          {{--<a class="dropdown-item" href="{{ route('administration') }}">
-                              Administración
-                          </a>--}}
                       </div>
                       
                   </li>

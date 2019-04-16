@@ -1,10 +1,10 @@
 <div class="container-fluid bg-primary p-0">
 	<h2 class="text-center p-5 text-white">
-        Datos E.T. GCC
+        Datos Estudios Técnicos Global
     </h2>
 </div>
 <div class="container">
-    @if(session('message'))
+    @if (session('message'))
         <div class="alert alert-success alert-dismissible" role="alert">
           	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	            <span aria-hidden="true">×</span>
@@ -14,7 +14,7 @@
 	    </div>
     @endif
  
-    @if( session('error') )
+    @if ( session('error') )
 	    <div class="alert alert-danger alert-dismissible" role="alert">
 	        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	            <span aria-hidden="true">×</span>
@@ -24,7 +24,7 @@
 	    </div>
     @endif
  
-    @if(count($errors) > 0)
+    @if (count($errors) > 0)
 	    <div class="alert alert-danger">
 	      	<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 	      	<div>
@@ -42,7 +42,7 @@
 			<a href="#" data-toggle="modal" data-target="#importCSV" class="btn btn-outline-primary"><i class="fas fa-file-csv"></i> Importar CSV</a>
 		</div>--}}
 		<div class="p-2">
-			<a href="{{route('CMGCC')}}" class="btn btn-outline-primary"><i class="fas fa-chart-bar"></i> Ver Ǵráfico</a>
+			<a href="{{route('CMGTC')}}" class="btn btn-outline-primary"><i class="fas fa-chart-bar"></i> Ver Ǵráfico</a>
 		</div>
 		{{--<div class="p-2">
 			<a href="{{route('exportAllGlobalData')}}"  class="btn btn-outline-success "><i class="fas fa-file-excel"></i> Exportar</a>
@@ -83,25 +83,25 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($getGccdata as $gcc)
+						@foreach($getGtcdata as $gtc)
 							<tr class="text-uppercase">
-								<td class="small text-capitalize text-center " style="padding-right: 50px">{{$gcc->ingenieria}}</td>
-								<td class="small" style="padding-right: 30px;" >{{$gcc->zona}}</td>
-								<td class="small  " style="padding-right: 80px">{{$gcc->codigo_expediente}}</td>
-								<td class="small  " style="padding-right: 100px">{{$gcc->solicitud_principal}}</td>
-								<td class="small  text-center " style="padding-right: 100px">{{$gcc->tipo}}</td>
-								<td class="small  text-truncate " style="max-width: 450px; cursor: context-menu;" >{{$gcc->subtipo}}</td>
-								<td class="small  text-truncate " style="max-width: 450px; cursor: context-menu;" title="{{$gcc->descripcion_expediente}}">{{$gcc->descripcion_expediente}}</td>
-								<td class="small  text-truncate " style="padding-right: 40px" > {{$gcc->potencia_solicitada}}</td>
-								<td class="small "  > {{$gcc->tecnico_gestion_comercial}}</td>
-								<td class="small  " style="padding-right: 70px">{{$gcc->tecnico_gestion_tecnica}}</td>
-								<td class="small  " style="padding-right: 30px">{{$gcc->estado}}</td>
-								<td class="small " style="padding-right: 70px">{{$gcc->estado_solicitud}}</td>
-								<td class="small  " style="padding-right: 120px">{{$gcc->fecha_asignacion}}</td>
-								<td class="small " style="padding-right: 100px">{{$gcc->plazo_legal_contestacion}}</td>
-								<td class="small" style="padding-right: 70px" >{{$gcc->fecha_hora_apertura}}</td>
-								<td class="small  " style="padding-right: 100px">{{$gcc->fecha_contestacion}}</td>
-								<td class="small  text-truncate " style="max-width: 250px">{{$gcc->fecha_limite}}</td>
+								<td class="small text-capitalize text-center " style="padding-right: 50px">{{$gtc->ingenieria}}</td>
+								<td class="small" style="padding-right: 30px;" >{{$gtc->zona}}</td>
+								<td class="small  " style="padding-right: 80px">{{$gtc->codigo_expediente}}</td>
+								<td class="small  " style="padding-right: 100px">{{$gtc->solicitud_principal}}</td>
+								<td class="small  text-center " style="padding-right: 100px">{{$gtc->tipo}}</td>
+								<td class="small  text-truncate " style="max-width: 450px; cursor: context-menu;" >{{$gtc->subtipo}}</td>
+								<td class="small  text-truncate " style="max-width: 450px; cursor: context-menu;" title="{{$gtc->descripcion_expediente}}">{{$gtc->descripcion_expediente}}</td>
+								<td class="small  text-truncate " style="padding-right: 40px" > {{$gtc->potencia_solicitada}}</td>
+								<td class="small "  > {{$gtc->tecnico_gestion_comercial}}</td>
+								<td class="small  " style="padding-right: 70px">{{$gtc->tecnico_gestion_tecnica}}</td>
+								<td class="small  " style="padding-right: 30px">{{$gtc->estado}}</td>
+								<td class="small " style="padding-right: 70px">{{$gtc->estado_solicitud}}</td>
+								<td class="small  " style="padding-right: 120px">{{$gtc->fecha_asignacion}}</td>
+								<td class="small " style="padding-right: 100px">{{$gtc->plazo_legal_contestacion}}</td>
+								<td class="small" style="padding-right: 70px" >{{$gtc->fecha_hora_apertura}}</td>
+								<td class="small  " style="padding-right: 100px">{{$gtc->fecha_contestacion}}</td>
+								<td class="small  text-truncate " style="max-width: 250px">{{$gtc->fecha_limite}}</td>
 							</tr>
 						@endforeach
 					</tbody>

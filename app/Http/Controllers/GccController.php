@@ -61,9 +61,9 @@ class GccController extends Controller
  
                     if(!empty($insert)){$insertData = DB::table('gccs')->insert($insert);}
                 }
-                return redirect('/')->with('success', 'Archivo importado correctamente');
+                return redirect('/estudios-tecnicos/gcc/graficos')->with('success', 'Archivo importado correctamente');
             }else{
-                return redirect('/')->with('error', 'No se ha podido importar el documento con extensión '.$extension.' !! Porfavor importe un documento con extensión xls o csv!!');;
+                return redirect('/estudios-tecnicos/gcc/graficos')->with('error', 'No se ha podido importar el documento con extensión '.$extension.' !! Porfavor importe un documento con extensión xls o csv!!');;
             }
         }
     }
