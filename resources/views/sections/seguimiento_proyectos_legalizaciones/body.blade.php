@@ -210,10 +210,11 @@ overflow: auto;}
 
 <script>
 
+
 		var data = [
 		  
 		  @foreach($getAlldata as $legalization)
-		  ['{{$legalization->provincia}}', 	'{{$legalization->codigo_nipsa}}','{{$legalization->tarea_proyecto}}','{{$legalization->fecha_encargo}}','{{$legalization->fecha_entrega}}','{{$legalization->titulo_encargo}}','{{$legalization->tecnico_endesa}}','{{$legalization->tipo_trabajo}}','{{$legalization->poblacion}}','{{$legalization->codigo_centro}}','{{$legalization->propiedad}}','{{$legalization->tipo}}','{{$legalization->legal}}','{{$legalization->departamento}}','{{$legalization->solicitud_nnss}}','{{$legalization->trabajo_gom}}','{{$legalization->organismos_implicados}}','{{$legalization->tarea_lca}}','{{$legalization->fecha_generacion}}','{{$legalization->tareas}}','{{$legalization->tramite_gom}}','{{$legalization->expte_industria}}','{{$legalization->pasado_ejecucion}}','{{$legalization->estado_tarea}}','{{$legalization->cfo}}','{{$legalization->apm}}','{{$legalization->motivo_paralizacion}}','{{$legalization->observaciones}}','{{$legalization->desistimiento}}','{{$legalization->expediente_finalizado}}','{{$legalization->fecha_favorable}}','{{$legalization->estado_tramitacion}}'],
+		  ['{{$legalization->provincia}}', 	'{{$legalization->codigo_nipsa}}','{{$legalization->tarea_proyecto}}','{{$legalization->fecha_encargo}}','{{$legalization->fecha_entrega}}','{{$legalization->titulo_encargo}}','{{$legalization->tecnico_endesa}}','{{$legalization->tipo_trabajo}}','{{$legalization->poblacion}}','{{$legalization->codigo_centro}}','{{$legalization->propiedad}}','{{$legalization->tipo}}','{{$legalization->legal}}','{{$legalization->departamento}}','{{$legalization->solicitud_nnss}}','{{$legalization->organismos_implicados}}','{{$legalization->tarea_lca}}','{{$legalization->fecha_generacion}}','{{$legalization->tareas}}','{{$legalization->tramite_gom}}','{{$legalization->expte_industria}}','{{$legalization->pasado_ejecucion}}','{{$legalization->estado_tarea}}','{{$legalization->cfo}}','{{$legalization->apm}}','{{$legalization->motivo_paralizacion}}','{{$legalization->observaciones}}','{{$legalization->desistimiento}}','{{$legalization->expediente_finalizado}}','{{$legalization->fecha_favorable}}','{{$legalization->estado_tramitacion}}'],
 		  @endforeach
 		  
 		];
@@ -224,7 +225,7 @@ overflow: auto;}
 		  	data: data,
 		  	allowHtml: true,
 		  	rowHeaders: true,
-		  	colHeaders: ['PROVINCIA','CODIGO NIPSA','TAREA PROYECTO','FECHA ENCARGO','FECHA ENTREGA','TITULO ENCARGO','TECNICO ENDESA','TIPO TRABAJO','POBLACION','CODIGO CENTRO','PROPIEDAD','TIPO','LEGAL','DEPARTAMENTO','SOLICITUD NNSS','TRABAJO GOM','ORGANISMOS IMPLICADOS','TAREA LCA','FECHA GENERACION', 'TAREAS','TRAMITE GOM','EXPTE INDUSTRIA','PASADO EJECUCION','ESTADO TAREA','CFO','APM','MOTIVO PARALIZACION','OBSERVACIONES','DESISTIMIENTO','EXPEDIENTE FINALIZADO','FECHA FAVORABLE INICIO EJECUCION','ESTADO TRAMITACION'],
+		  	colHeaders: ['PROVINCIA','CODIGO NIPSA','TAREA PROYECTO','FECHA ENCARGO','FECHA ENTREGA','TITULO ENCARGO','TECNICO ENDESA','TIPO TRABAJO','POBLACION','CODIGO CENTRO','PROPIEDAD','TIPO','LEGAL','DEPARTAMENTO','SOLICITUD NNSS','ORGANISMOS IMPLICADOS','TAREA LCA','FECHA GENERACION', 'TAREAS','TRAMITE GOM','EXPTE INDUSTRIA','PASADO EJECUCION','ESTADO TAREA','CFO','APM','MOTIVO PARALIZACION','OBSERVACIONES','DESISTIMIENTO','EXPEDIENTE FINALIZADO','FECHA FAVORABLE INICIO EJECUCION','ESTADO TRAMITACION'],
 		  	
 		  	filters: true,
 		  	dropdownMenu: [

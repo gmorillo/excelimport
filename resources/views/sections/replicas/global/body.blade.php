@@ -146,8 +146,8 @@
 overflow-x: scroll; overflow-y:hidden;}
 .wrapper1{height: 20px; }
 .wrapper2{height: 10800px; }
-.div1 {width:7450px; height: 20px; }
-.div2 {width:7450px; height: 10800px;
+.div1 {width:7850px; height: 20px; }
+.div2 {width:7850px; height: 10800px;
 overflow: auto;}
 </style>
 
@@ -208,7 +208,7 @@ overflow: auto;}
 		   		200, 
 		   		200, 
 		   		200, 
-		   		200, 
+		   		600, 
 		   		200,
 		   		900, 
 		   		200, 

@@ -52,41 +52,41 @@ class ProjectlegalizationController extends Controller
                 // IMPORTACIÓN DE SEGUIMIENTOS UNIFICADOS
                 if(!empty($data)){
  
-                    foreach ($data as $key => $value) {
+                    foreach ($data as $key => $value){
                         $insert[] = [
                         
-                        'provincia'                 => $value->provincia,
-                        'codigo_nipsa'              => $value->codigo_nipsa,
-                        'tarea_proyecto'            => $value->tarea_proyecto,
-                        'fecha_encargo'             => $value->fecha_encargo,
-                        'fecha_entrega'             => $value->fecha_entrega,
-                        'titulo_encargo'            => $value->titulo_encargo,
-                        'tecnico_endesa'            => $value->tecnico_endesa,
-                        'tipo_trabajo'              => $value->tipo_trabajo,
-                        'poblacion'                 => $value->poblacion,
-                        'codigo_centro'             => $value->codigo_centro,
-                        'propiedad'                 => $value->propiedad,
-                        'tipo'                      => $value->tipo,
-                        'legal'                     => $value->legal,
-                        'departamento'              => $value->departamento,
-                        'solicitud_nnss'            => $value->solicitud_nnss,
-                        'trabajo_gom'               => $value->trabajo_gom,
-                        'organismos_implicados'     => $value->organismos_implicados,
-                        'tarea_lca'                 => $value->tarea_lca,
-                        'fecha_generacion'          => $value->fecha_generacion,
-                        'tramite_gom'               => $value->tramite_gom,
-                        'expte_industria'           => $value->expte_industria,
-                        'pasado_ejecucion'          => $value->pasado_ejecucion,
-                        'estado_tarea'              => $value->estado_tarea,
-                        'cfo'                       => $value->cfo,
-                        'apm'                       => $value->apm,
-                        'motivo_paralizacion'       => $value->motivo_paralizacion,
-                        'observaciones'             => $value->observaciones,
-                        'desistimiento'             => $value->desistimiento,
-                        'expediente_finalizado'     => $value->expediente_finalizado,
-                        'fecha_favorable'           => $value->fecha_favorable,
-                        'estado_tramitacion'        => $value->estado_tramitacion,
-                        'dias_plazo'                => $value->dias_plazo,
+                        preg_replace("[\n|\r|\n\r]", "",'provincia')                 => preg_replace("[\n|\r|\n\r]", "",$value->provincia),
+                        preg_replace("[\n|\r|\n\r]", "",'codigo_nipsa')              => preg_replace("[\n|\r|\n\r]", "",$value->codigo_nipsa),
+                        preg_replace("[\n|\r|\n\r]", "",'tarea_proyecto')            => preg_replace("[\n|\r|\n\r]", "",$value->tarea_proyecto),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_encargo')             => preg_replace("[\n|\r|\n\r]", "",$value->fecha_encargo),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_entrega')             => preg_replace("[\n|\r|\n\r]", "",$value->fecha_entrega),
+                        preg_replace("[\n|\r|\n\r]", "",'titulo_encargo')            => preg_replace("[\n|\r|\n\r]", "",$value->titulo_encargo),
+                        preg_replace("[\n|\r|\n\r]", "",'tecnico_endesa')            => preg_replace("[\n|\r|\n\r]", "",$value->tecnico_endesa),
+                        preg_replace("[\n|\r|\n\r]", "",'tipo_trabajo')              => preg_replace("[\n|\r|\n\r]", "",$value->tipo_trabajo),
+                        preg_replace("[\n|\r|\n\r]", "",'poblacion')                 => preg_replace("[\n|\r|\n\r]", "",$value->poblacion),
+                        preg_replace("[\n|\r|\n\r]", "",'codigo_centro')             => preg_replace("[\n|\r|\n\r]", "",$value->codigo_centro),
+                        preg_replace("[\n|\r|\n\r]", "",'propiedad')                 => preg_replace("[\n|\r|\n\r]", "",$value->propiedad),
+                        preg_replace("[\n|\r|\n\r]", "",'tipo')                      => preg_replace("[\n|\r|\n\r]", "",$value->tipo),
+                        preg_replace("[\n|\r|\n\r]", "",'legal')                     => preg_replace("[\n|\r|\n\r]", "",$value->legal),
+                        preg_replace("[\n|\r|\n\r]", "",'departamento')              => preg_replace("[\n|\r|\n\r]", "",$value->departamento),
+                        preg_replace("[\n|\r|\n\r]", "",'solicitud_nnss')            => preg_replace("[\n|\r|\n\r]", "",$value->solicitud_nnss),
+                        preg_replace("[\n|\r|\n\r]", "",'trabajo_gom')               => preg_replace("[\n|\r|\n\r]", "",$value->trabajo_gom),
+                        preg_replace("[\n|\r|\n\r|+]", "",'organismos_implicados')     => preg_replace("[\n|\r|\n\r|+]", "",$value->organismos_implicados),
+                        preg_replace("[\n|\r|\n\r]", "",'tarea_lca')                 => preg_replace("[\n|\r|\n\r]", "",$value->tarea_lca),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_generacion')          => preg_replace("[\n|\r|\n\r]", "",$value->fecha_generacion),
+                        preg_replace("[\n|\r|\n\r]", "",'tramite_gom')               => preg_replace("[\n|\r|\n\r]", "",$value->tramite_gom),
+                        preg_replace("[\n|\r|\n\r]", "",'expte_industria')           => preg_replace("[\n|\r|\n\r]", "",$value->expte_industria),
+                        preg_replace("[\n|\r|\n\r]", "",'pasado_ejecucion')          => preg_replace("[\n|\r|\n\r]", "",$value->pasado_ejecucion),
+                        preg_replace("[\n|\r|\n\r]", "",'estado_tarea')              => preg_replace("[\n|\r|\n\r]", "",$value->estado_tarea),
+                        preg_replace("[\n|\r|\n\r]", "",'cfo')                       => preg_replace("[\n|\r|\n\r]", "",$value->cfo),
+                        preg_replace("[\n|\r|\n\r]", "",'apm')                       => preg_replace("[\n|\r|\n\r]", "",$value->apm),
+                        preg_replace("[\n|\r|\n\r]", "",'motivo_paralizacion')       => preg_replace("[\n|\r|\n\r]", "",$value->motivo_paralizacion),
+                        preg_replace("[\n|\r|\n\r]", "",'observaciones')             => preg_replace("[\n|\r|\n\r]", "",$value->observaciones),
+                        preg_replace("[\n|\r|\n\r]", "",'desistimiento')             => preg_replace("[\n|\r|\n\r]", "",$value->desistimiento),
+                        preg_replace("[\n|\r|\n\r]", "",'expediente_finalizado')     => preg_replace("[\n|\r|\n\r]", "",$value->expediente_finalizado),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_favorable')           => preg_replace("[\n|\r|\n\r]", "",$value->fecha_favorable),
+                        preg_replace("[\n|\r|\n\r]", "",'estado_tramitacion')        => preg_replace("[\n|\r|\n\r]", "",$value->estado_tramitacion),
+                        preg_replace("[\n|\r|\n\r]", "",'dias_plazo')                => preg_replace("[\n|\r|\n\r]", "",$value->dias_plazo),
                         ];
                     }
  
@@ -105,26 +105,26 @@ class ProjectlegalizationController extends Controller
                 //IMPORTACIÓN DE SEGUIMIENTOS LEGALIZACIONES
                 if(!empty($dataTrackingLegalization)){
  
-                    foreach ($dataTrackingLegalization as $key => $value) {
+                    foreach ($dataTrackingLegalization as $key =>$value ){
                         $insert[] = [
-                        'identificador_ede'         => $value->identificador_ede,
-                        'trabajo_gom'         => $value->trabajo_gom,
-                        'identificador_ingenieria'  => $value->identificador_ingenieria,
-                        'organismos_implicados'     => $value->organismos_implicados,
-                        'tarea_tramitacion'         => $value->tarea_tramitacion,
-                        'fecha_generacion_tareas'   => $value->fecha_generacion_tareas,
-                        'tramite_gom'               => $value->tramite_gom,
-                        'expediente_industria'      => $value->expediente_industria,
-                        'pasado_ejecucion'          => $value->pasado_ejecucion,
-                        'estado_tarea'              => $value->estado_tarea,
-                        'cfo'                        => $value->cfo,
-                        'apm_resolucion_transmision' => $value->apm_resolucion_transmision,
-                        'motivo_paralizacion'        => $value->motivo_paralizacion,
-                        'comentarios'                => $value->comentarios,
-                        'desistimiento'              => $value->desistimiento,
-                        'expediente_finalizado'      => $value->expediente_finalizado,
-                        'fecha_favorable_inicio_ejecucion' => $value->fecha_favorable_inicio_ejecucion,
-                        'estado_tramitacion'                => $value->estado_tramitacion,
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ede')         => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ede),
+                        preg_replace("[\n|\r|\n\r]", "",'trabajo_gom')         => preg_replace("[\n|\r|\n\r]", "",$value->trabajo_gom),
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ingenieria')  => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ingenieria),
+                        preg_replace("[\n|\r|\n\r|+]", "",'organismos_implicados')     => preg_replace("[\n|\r|\n\r]", "",$value->organismos_implicados),
+                        preg_replace("[\n|\r|\n\r]", "",'tarea_tramitacion')         => preg_replace("[\n|\r|\n\r]", "",$value->tarea_tramitacion),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_generacion_tareas')   => preg_replace("[\n|\r|\n\r]", "",$value->fecha_generacion_tareas),
+                        preg_replace("[\n|\r|\n\r]", "",'tramite_gom')               => preg_replace("[\n|\r|\n\r]", "",$value->tramite_gom),
+                        preg_replace("[\n|\r|\n\r]", "",'expediente_industria')      => preg_replace("[\n|\r|\n\r]", "",$value->expediente_industria),
+                        preg_replace("[\n|\r|\n\r]", "",'pasado_ejecucion')          => preg_replace("[\n|\r|\n\r]", "",$value->pasado_ejecucion),
+                        preg_replace("[\n|\r|\n\r]", "",'estado_tarea')              => preg_replace("[\n|\r|\n\r]", "",$value->estado_tarea),
+                        preg_replace("[\n|\r|\n\r]", "",'cfo')                        => preg_replace("[\n|\r|\n\r]", "",$value->cfo),
+                        preg_replace("[\n|\r|\n\r]", "",'apm_resolucion_transmision') => preg_replace("[\n|\r|\n\r]", "",$value->apm_resolucion_transmision),
+                        preg_replace("[\n|\r|\n\r]", "",'motivo_paralizacion')        => preg_replace("[\n|\r|\n\r]", "",$value->motivo_paralizacion),
+                        preg_replace("[\n|\r|\n\r]", "",'comentarios')                => preg_replace("[\n|\r|\n\r]", "",$value->comentarios),
+                        preg_replace("[\n|\r|\n\r]", "",'desistimiento')              => preg_replace("[\n|\r|\n\r]", "",$value->desistimiento),
+                        preg_replace("[\n|\r|\n\r]", "",'expediente_finalizado')      => preg_replace("[\n|\r|\n\r]", "",$value->expediente_finalizado),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_favorable_inicio_ejecucion') => preg_replace("[\n|\r|\n\r]", "",$value->fecha_favorable_inicio_ejecucion),
+                        preg_replace("[\n|\r|\n\r]", "",'estado_tramitacion')                => preg_replace("[\n|\r|\n\r]", "",$value->estado_tramitacion),
                         ];
                     }
  
@@ -143,20 +143,20 @@ class ProjectlegalizationController extends Controller
                 //IMPORTACIÓN DE SEGUIMIENTOS PROYECTOS               
                 if(!empty($dataTrackingProject)){
  
-                    foreach ($dataTrackingProject as $key => $value) {
+                    foreach ($dataTrackingProject as $key => $value){
                         $insert[] = [
-                        'identificador_ede'         => $value->identificador_ede,
-                        'trabajo_gom'               => $value->trabajo_gom,
-                        'tipo'                      => $value->tipo,
-                        'identificador_ingenieria'  => $value->identificador_ingenieria,
-                        'lca'                       => $value->lca,
-                        'descripcion'               => $value->descripción,
-                        'municipio'                 => $value->topología,
-                        'topologia'                 => $value->municipio,
-                        'fecha_pedido'              => $value->fecha_pedido,
-                        'fecha_entrega'             => $value->fecha_entrega,
-                        'plazo'                     => $value->plazo,
-                        'provincia'                     => $value->provincia,
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ede')         => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ede),
+                        preg_replace("[\n|\r|\n\r]", "",'trabajo_gom')               => preg_replace("[\n|\r|\n\r]", "",$value->trabajo_gom),
+                        preg_replace("[\n|\r|\n\r]", "",'tipo')                      => preg_replace("[\n|\r|\n\r]", "",$value->tipo),
+                        preg_replace("[\n|\r|\n\r]", "",'identificador_ingenieria')  => preg_replace("[\n|\r|\n\r]", "",$value->identificador_ingenieria),
+                        preg_replace("[\n|\r|\n\r]", "",'lca')                       => preg_replace("[\n|\r|\n\r]", "",$value->lca),
+                        preg_replace("[\n|\r|\n\r]", "",'descripcion')               => preg_replace("[\n|\r|\n\r]", "",$value->descripción),
+                        preg_replace("[\n|\r|\n\r]", "",'municipio')                 => preg_replace("[\n|\r|\n\r]", "",$value->topología),
+                        preg_replace("[\n|\r|\n\r]", "",'topologia')                 => preg_replace("[\n|\r|\n\r]", "",$value->municipio),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_pedido')              => preg_replace("[\n|\r|\n\r]", "",$value->fecha_pedido),
+                        preg_replace("[\n|\r|\n\r]", "",'fecha_entrega')             => preg_replace("[\n|\r|\n\r]", "",$value->fecha_entrega),
+                        preg_replace("[\n|\r|\n\r]", "",'plazo')                     => preg_replace("[\n|\r|\n\r]", "",$value->plazo),
+                        preg_replace("[\n|\r|\n\r]", "",'provincia')                 => preg_replace("[\n|\r|\n\r]", "",$value->provincia),
                         ];
                     }
  
@@ -176,7 +176,7 @@ class ProjectlegalizationController extends Controller
                 
  
             }else {
-                return redirect('/seguimiento-proyecto-legalizaciones/')->with('error', 'File is a '.$extension.' file.!! Please upload a valid xls/csv file..!!');;
+                return redirect('/seguimiento-proyecto-legalizaciones/')->with('error', 'File is a '.$extension.') file.!! Please upload a valid xls/csv file..!!');;
             }
         }
     }
