@@ -92,6 +92,7 @@ overflow: auto;}
 			  '{{$legalization->legal}}', //LEGAL' 
 			  '{{$legalization->departamento}}', //DEPARTAMENTO' 
 			  '{{$legalization->solicitud_nnss}}', //SOLICITUD NNSS' 
+			  '{{$legalization->trabajo_gom}}', // TRABAJO GOM
 			  '{{$legalization->organismos_implicados}}', //ORGANISMOS IMPLICADOS' 
 			  '{{$legalization->tarea_lca}}', //TAREA LCA'
 			  '{{$legalization->fecha_generacion}}', //FECHA GENERACION' 
@@ -133,11 +134,12 @@ overflow: auto;}
 			  	'LEGAL',
 			  	'DEPARTAMENTO',
 			  	'SOLICITUD NNSS',
+			  	'Nº TRABAJO',
 			  	'ORGANISMOS IMPLICADOS',
 			  	'TAREA LCA',
 			  	'FECHA GENERACION',
-			  	 'TRAMITE GOM',
-			  	 'EXPTE INDUSTRIA',
+			  	'TRAMITE GOM',
+			  	'EXPTE INDUSTRIA',
 			  	'PASADO EJECUCION',
 			  	'ESTADO TAREA',
 			  	'CFO',
@@ -176,6 +178,7 @@ overflow: auto;}
 		   		200, //WIDTH HEADER TABLE  --> LEGAL' 
 		   		200, //WIDTH HEADER TABLE  --> DEPARTAMENTO' 
 		   		200, //WIDTH HEADER TABLE  --> SOLICITUD NNSS' 
+		   		200, //WIDTH HEADER TABLE  --> Nº TRABAJO' 
 		   		300, //WIDTH HEADER TABLE  --> ORGANISMOS IMPLICADOS' 
 		   		200, //WIDTH HEADER TABLE  --> TAREA LCA'
 		   		200, //WIDTH HEADER TABLE  --> FECHA GENERACION' 
